@@ -1,0 +1,24 @@
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.firefox.options import Options
+
+opts = Options
+opts.set_headless
+assert opts.headless 
+
+driver = webdriver.Chrome()
+# driver.get("http://20.21.22.1/login")
+driver.get("https://google.com")
+
+#input username
+username = driver.find_element_by_id("xxx")
+username.clear()
+username.send_keys("benhil106b")
+password = driver.find_element_by_id("yyy")
+
+#input password
+password.clear()
+password.send_keys("10677b")
+password.send_keys(Keys.RETURN)
+driver.close()
+
